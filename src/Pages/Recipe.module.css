@@ -1,0 +1,49 @@
+.outerBox {
+    width: 90%;
+    margin: 3rem auto;
+    padding: 3rem;
+    border-radius: 1.5rem;
+    color: white;
+    background-color: black;
+}
+
+.innerBox {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 3rem 0 0;
+}
+
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.button {
+    font-size: 1rem;
+    padding: 1rem 2rem;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    margin: 0 1rem;
+}
+
+.button:hover {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
+}
+
+.title {
+    font-family: 'Courgette', cursive;
+}
+
+.image {
+    width: 25rem;
+    border-radius: 1.5rem;
+}
+
+.nextBox {
+    margin: 3rem 0 0;
+}
