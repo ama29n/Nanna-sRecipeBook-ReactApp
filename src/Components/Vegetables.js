@@ -10,13 +10,20 @@ function Vegetables() {
   const [recipes, setRecipes] = useState(data);
   const KEY = "f214196873d94844bdac6ce439db977a";
   const veggies = async () => {
-    const response = await fetch(
-      `https://api.spoonacular.com/recipes/random?apiKey=${KEY}&number=10&tags=vegetarian`
-    );
-    const data = await response.json();
-    setRecipes(data.recipes);
-    console.log(data.recipes);
-    // setRecipes(data);
+    try {
+      const response = await fetch(
+        `https://api.spoonacular.com/recipes/random?apiKey=${KEY}&number=10&tags=vegetarian`
+      );
+      const jsonData = await response.json();
+      if(jsonData.recipes) {
+        setRecipes(jsonData.recipes);
+      } else {
+        setRecipes(data);
+      }
+    } catch(error) {
+      setRecipes(data);
+      console.log(error);
+    }
   };
   // To load popular recepies whenever the page loads
   useEffect(() => {
@@ -25,7 +32,7 @@ function Vegetables() {
   // List
   const list = recipes.map((item) => {
     return (
-      <SplideSlide>
+      <SplideSlide key={item.id} id={item.id}>
         <Link to={"/recipe/" + item.id} style={{ textDecoration: "none" }}>
           <Card>
             <p>{item.title}</p>
@@ -39,12 +46,10 @@ function Vegetables() {
   return (
     <div className={styles.box}>
       <h2 className={styles.title}>VEGGIES</h2>
-
       <div className={styles.splide}>
         <Splide
           options={{
             perPage: 4,
-            // arrows: false,
             pagination: false,
             drag: "free",
             gap: "1rem",
