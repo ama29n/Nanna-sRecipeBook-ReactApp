@@ -4,10 +4,10 @@ import styles from "./Popular.module.css";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 import { Link } from "react-router-dom";
-// import data from "./Data";
+import data from "./Data";
 
 function Popular() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(data);
   const KEY = "f214196873d94844bdac6ce439db977a";
   const popularRecipes = async () => {
     const response = await fetch(
