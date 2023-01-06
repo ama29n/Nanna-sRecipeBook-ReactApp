@@ -1,8 +1,6 @@
 .card {
     border-radius: 1.5rem;
-    background-color: white;
-    color: black;
-    box-shadow: 0.2px 0.2px 70px rgb(52, 52, 52);
+    background-color: #1e1e1e;
     padding: 1rem;
     width: fit-content;
     display: flex;
@@ -10,9 +8,6 @@
     align-items: center;
     justify-content: space-between;
     height: 15rem;
-
-    /* background-color: rgb(39, 38, 38); */
-    background-color: rgb(66, 66, 66);
     color: white;
-
+    border: 1px solid #4d4d4d;
 }

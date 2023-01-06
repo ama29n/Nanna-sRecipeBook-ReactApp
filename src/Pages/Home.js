@@ -4,10 +4,10 @@ import Vegetables from "../Components/Vegetables";
 function Home() {
   return (
     <>
-        <Popular/>
-        <Vegetables/>
+      <Popular />
+      <Vegetables />
     </>
-  )
+  );
 }
 
 export default Home;
